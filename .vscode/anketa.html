@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Анкета за посетители</title>
+        <style type ="text/css">
+        input{border-style:dashed;}
+            img{margin:10px;}
+            body {background-image: url(walp.jpeg);
+        
+        background-size: cover;
+        background-attachment: fixed;
+        background-blend-mode:screen;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      
+            }
+            </style>
+            </head>
+            <body>
+<h4>*Изберете пол:</h4>
+
+<form>
+    
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Машко</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Женско</label><br>
+  
+</form> 
+<h4>*Внесете име и презиме:</h4>
+<form method="post"action="prv.html">
+<input type="hidden"name="recipient"
+value="emilijatass@gmail.com">
+<input type="hidden"name="subject"
+value="Feedback form">
+<input type="hidden" name="redirect"
+value="prv.html">
+
+<p>
+    <input name="name" type="text" size="30"
+    maxlength="50">
+</p>
+
+
+</form>
+
+<h4>*Внесете емаил адреса:</h4>
+
+<form method="prv.html">
+    <input name="name" type="text" size="30"
+    maxlength="50">
+</form> 
+
+<p>
+    <h4>*Одберете кои содржини би сакале да бидат додадени:</h4>
+    <label>Спорт
+ <input name="thingsliked" type="checkbox"
+  value="Спорт"></label>
+  <label>Хороскоп
+  <input name="thingsliked" type="checkbox"
+  value="Хороскоп"></label>
+  <label>Мода
+  <input name="thingsliked" type="checkbox"
+  value="Мода"></label>
+  <label>Патувања
+  <input name="thingsliked" type="checkbox"
+  value="Патувања"></label>
+  <label>Наука
+  <input name="thingsliked" type="checkbox"
+  value="Наука"></label>
+
+</p>
+<p><label><strong>*Ваш коментар:</strong><br>
+    <textarea name = "comments" rows = "4" cols = "36" placeholder = "Enter comments here."></textarea>
+    </label></p>
+    
+    <p><label><strong>*Дали се забавувате?<br>
+        Оценете ! </strong></br>
+        <select name = "rating">
+        <option selected>5</option>
+        
+        <option>4</option>
+        <option>3</option>
+        <option>2</option>
+        <option>1</option>
+        </select>
+        </label>
+        </p>
+
+        <p>
+            <input type ="submit" value = "Submit" />
+            <input type = "reset" value = "Clear" />
+            </p>
+            </form>
+</body>
+</html>
+
+
+
+
+
+
+
+    </head>
+</html>
