@@ -20,7 +20,42 @@ background-attachment: fixed;
 background-blend-mode:screen;
 font-family: Georgia, 'Times New Roman', Times, serif;
     }
+    img{border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;}
     </style>
+    <script >
+ 
+    var movie1Img;
+            
+            function start()
+            {
+               var button = document.getElementById( "rollCheck" );
+               button.addEventListener( "click",check , false );
+               movie1Img = document.getElementById( "movie1" );
+              
+            } 
+   
+            function check()
+            {
+               setImage( movie1Img );
+           
+            } 
+            function setImage( movieImg )
+            {
+               var movieValue = Math.floor( 1 + Math.random() * 10 );
+               movieImg.setAttribute( "src", "movie" + movieValue + ".jpg" );
+               movieImg.setAttribute( "alt", 
+                   + movieValue + " spot(s)" );
+            }
+      
+      
+      window.addEventListener( "load", start, false );
+      
+      
+      
+      </script>
     </head>
     <body>
     <nav>
@@ -50,6 +85,12 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 
     </ul>
     </nav>
+    <form style="text-align: center;" action = "#">
+        <input id = "rollCheck" type = "button" value = "Кликни за предлог филм!"> 
+        <br>
+        <br>
+        <img id = "movie1" src = "blank.jpg" alt = "blank image">
+     </form>
     </body>
 
     </html>

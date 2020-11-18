@@ -14,6 +14,13 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
         </style>
+    <script type="text/javascript">
+    function changeText2(){
+   var userInput = document.getElementById('userInput').value;
+document.getElementById('boldStuff2').innerHTML = userInput;
+}
+        </script>
+   
 </head>
         <body>
 
@@ -52,6 +59,15 @@
     </p>
 </article>
 </section>
+<p>
+    <p>Вашиот коментар: <b id='boldStuff2'></b> </p> 
+    <textarea name = "comments"  id='userInput' rows = "4" cols = "36" placeholder = 'Внесете коментар..'></textarea>
+  
+    <input type='button' onclick='changeText2()' value='Сподели коментар.'/>
+    
+   
+</p>
+
             </body>
             
 </html>
@@ -59,5 +75,4 @@
     
 
 
-        </head>
-        </html>
+   

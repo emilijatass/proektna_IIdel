@@ -20,8 +20,10 @@
   .right{margin-left:160px;}
 
     </style>
-</head>
+
+
 <body>
+
     <h3>Галерија</h3>
     <h5>Catching sunsets:</h5>
     <p>
@@ -30,36 +32,62 @@
 <img class="right" src="treta.jpg"height="350px" width="250px" alt="sunsets">
     </p>
 <p>
-
-    <form >
     
-        <input type="radio" id="like" name="feedback" value="like">
-        <label for="like">Like</label>
-        <input style=margin-left:300px;  type="radio" id="like" name="feedback" value="like">
-        <label for="like">Like</label>
-        <input style=margin-left:350px;  type="radio" id="like" name="feedback" value="like">
-        <label for="like">Like</label><br>
-       
-        <input type="radio" id="dislike" name="feedback" value="like">
-        <label for="dislike">Dislike</label>
-        <input style=margin-left:280px; type="radio" id="dislike" name="feedback" value="like">
-        <label for="dislike">Dislike</label>
-        <input style=margin-left:333px; type="radio" id="dislike" name="feedback" value="like">
-        <label for="dislike">Dislike</label>
-        
 
-        
+        <input type="image" src="heart.png" alt="Like" title="Like" width= "34" height="33" id="heart" onClick="onClick()">
      
-        
-      </form>
-    </p>
+            <span id="output"></span>
 
-     <hr>
-     <p>
-      <label><strong>*Ваш коментар:</strong><br>
-        <textarea name = "comments" rows = "4" cols = "36" placeholder = "Enter comments here."></textarea>
-        </label>
+            <input style=margin-left:300px; type="image" src="heart.png" alt="Like" title="Like" width= "34" height="33" id="heart" onClick="onClick2()">
+            
+               
+                    <span id="output2"></span>
+                 
+                  <input style=margin-left:370px; type="image" src="heart.png" alt="Like" title="Like" width= "34" height="33" id="heart" onClick="onClick3()">
+     
+                    <span id="output3"></span>            
     </p>
+    <script>
+        var clicks = 0;
+function onClick() 
+{
+    clicks += 1;
+    document.getElementById("output").innerHTML = clicks;
+};
+var clicks2=0;
+function onClick2() 
+{
+    clicks2 += 1;
+    document.getElementById("output2").innerHTML = clicks2;
+};
+var clicks3=0;
+function onClick3() 
+{
+    clicks3 += 1;
+    document.getElementById("output3").innerHTML = clicks3;
+};
+var comm;
+var func;
+            var commArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+            function addComment(clicked_id) {
+                comm = window.prompt("Внесете ваш коментар ..");
+                func="writtenhere"+(clicked_id-100);
+                document.getElementById(func).innerHTML += comm + "<br>";
+                func="idd"+(clicked_id-100);
+                commArray[clicked_id-101]++;                
+                document.getElementById(func).innerHTML = comm[clicked_id-101];
+            }
+
+
+    </script>
+     <hr>
+     
+     <span id="id1"></span>
+     <button id = "101" onclick="addComment(this.id)" type="button"><input type="image" src="comment.jpg" alt="comment"width="30" height="30" id="idd1"></button>
+     <p id="writtenhere1"></p>
+
+    
 
 </body>
+
 </html>
