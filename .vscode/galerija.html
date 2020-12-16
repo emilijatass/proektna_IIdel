@@ -4,90 +4,273 @@
 <head>
     <meta charset="utf-8">
     <title> Галерија </title>
-    <style type="text/css">
+    <script
+    src="https://kit.fontawesome.com/488ba0de98.js"
+    crossorigin="anonymous"
+  ></script>
+    <style src="galerija.css">
         body {
-            background-image: url(walp.jpeg);
+    background-image: url(walp.jpeg);
 
-            background-size: cover;
-            background-attachment: fixed;
-            background-blend-mode: screen;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-        h5:hover{background-color:rgb(236, 236, 71);
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: screen;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
- 
-  .center{margin-left:80px;}
-  .right{margin-left:160px;}
-
     </style>
-
-
+ <script type="text/javascript" src="com_insta.js"></script>
+</head>
 <body>
 
     <h3>Галерија</h3>
     <h5>Catching sunsets:</h5>
     <p>
-<img  src="prva.jpg" height="350px" width="250px" alt="sunsets">
-<img class="center" src="vtora.jpg" height="350px" width="250px" alt="sunsets">
-<img class="right" src="treta.jpg"height="350px" width="250px" alt="sunsets">
-    </p>
-<p>
+
+      <div
+      style="display: inline-block; justify-content: space-between; width: 100%"
+    >
     
+      <div class="column">
+        <img class="image" src="prva.jpg" alt="sunsets" style="height: 700px" />
+        <div class="like">
+          <i onclick="click1(this)" class="far fa-heart" id="like1"></i>
+          <label id="counter1"></label>
+        </div>
+        <div id="first" class="container">
+          <input class="input" type="text" id="comm11" onfocus="myFunction(this)" />
+          <button class="btn" onclick="storeComm11()">Comment</button>
+          <br /><br />
+          <div id="labels1" class="labelsAll"></div>
+        </div>
+      </div>
 
-        <input type="image" src="heart.png" alt="Like" title="Like" width= "34" height="33" id="heart" onClick="onClick()">
-     
-            <span id="output"></span>
+      <div class="column">
+        <img class="image"src="vtora.jpg" alt="sunsets" style="height: 700px"/>
+        <div class="like">
+          <i onclick="click2(this)"class="far fa-heart" id="like2"></i>
+          <label id="counter2"></label>
+        </div>
+        <div id="second" class="container">
+          <input class="input" type="text" id="comm22" onfocus="myFunction(this)" />
+          <button class="btn" onclick="storeComm22()">Comment</button>
+          <br /><br />
+          <div id="labels2" class="labelsAll"></div>
+        </div>
+      </div>
 
-            <input style=margin-left:300px; type="image" src="heart.png" alt="Like" title="Like" width= "34" height="33" id="heart" onClick="onClick2()">
-            
-               
-                    <span id="output2"></span>
-                 
-                  <input style=margin-left:370px; type="image" src="heart.png" alt="Like" title="Like" width= "34" height="33" id="heart" onClick="onClick3()">
+      <div class="column">
+        <img class="image" src="treta.jpg"alt="sunsets"style="height: 700px"/>
+        <div class="like">
+          <i onclick="click3(this)" class="far fa-heart" id="like3"></i>
+          <label id="counter3"></label>
+        </div>
+        <div id="third" class="container">
+          <input class="input" type="text" id="comm33"onfocus="myFunction(this)" />
+          <button class="btn" onclick="storeComm33()">Comment</button>
+          <br /><br />
+          <div id="labels3" class="labelsAll"></div>
+        </div>
+      </div>
      
-                    <span id="output3"></span>            
-    </p>
+    </div>
+
     <script>
-        var clicks = 0;
-function onClick() 
-{
-    clicks += 1;
-    document.getElementById("output").innerHTML = clicks;
-};
-var clicks2=0;
-function onClick2() 
-{
-    clicks2 += 1;
-    document.getElementById("output2").innerHTML = clicks2;
-};
-var clicks3=0;
-function onClick3() 
-{
-    clicks3 += 1;
-    document.getElementById("output3").innerHTML = clicks3;
-};
-var comm;
-var func;
-            var commArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-            function addComment(clicked_id) {
-                comm = window.prompt("Внесете ваш коментар ..");
-                func="writtenhere"+(clicked_id-100);
-                document.getElementById(func).innerHTML += comm + "<br>";
-                func="idd"+(clicked_id-100);
-                commArray[clicked_id-101]++;                
-                document.getElementById(func).innerHTML = comm[clicked_id-101];
-            }
+      var comments11;
+      var comments22;
+      var comments33;
 
+      if (window.localStorage.getItem("comment11")) {
+        comments11 = JSON.parse(window.localStorage.getItem("comment11"));
+      } else {
+        comments11 = [];
+      }
+      if (window.localStorage.getItem("comment22")) {
+        comments22 = JSON.parse(window.localStorage.getItem("comment22"));
+      } else {
+        comments22 = [];
+      }
+      if (window.localStorage.getItem("comment33")) {
+        comments33 = JSON.parse(window.localStorage.getItem("comment33"));
+      } else {
+        comments33 = [];
+      }
 
+      var like1 = document.getElementById("like1");
+      var like2 = document.getElementById("like2");
+      var like3 = document.getElementById("like3");
+
+      var comm11 = document.getElementById("comm11");
+      var comm22 = document.getElementById("comm22");
+      var comm33 = document.getElementById("comm33");
+
+      var counter1 = document.getElementById("counter1");
+      var counter2 = document.getElementById("counter2");
+      var counter3 = document.getElementById("counter3");
+
+      count1 = window.localStorage.getItem("like1");
+      count2 = window.localStorage.getItem("like2");
+      count3 = window.localStorage.getItem("like3");
+
+      function click1(event) {
+        count1++;
+        counter1.innerHTML = count1;
+        window.localStorage.setItem("like1", count1);
+        Toggle(event);
+      }
+
+      function click2(event) {
+        count2++;
+        counter2.innerHTML = count2;
+        window.localStorage.setItem("like2", count2);
+        Toggle(event);
+      }
+
+      function click3(event) {
+        count3++;
+        counter3.innerHTML = count3;
+        window.localStorage.setItem("like3", count3);
+        Toggle(event);
+      }
+
+      function storeComm11() {
+        var date = new Date().toLocaleString();
+        var singleComment = { value: comm11.value, date: date };
+
+        comments11.push(singleComment);
+        console.log(comments11);
+        window.localStorage.setItem("comment11", JSON.stringify(comments11));
+
+        load();
+      }
+
+      function storeComm22() {
+        var date = new Date().toLocaleString();
+        var singleComment2 = { value: comm22.value, date: date };
+
+        comments22.push(singleComment2);
+        console.log(comments22);
+        window.localStorage.setItem("comment22", JSON.stringify(comments22));
+
+        load();
+      }
+
+      function storeComm33() {
+        var date = new Date().toLocaleString();
+        var singleComment3 = { value: comm33.value, date: date };
+
+        comments33.push(singleComment3);
+        console.log(comments33);
+        window.localStorage.setItem("comment33", JSON.stringify(comments33));
+
+        load();
+      }
+
+      function load() {
+        var first = document.getElementById("labels1");
+        while (first.firstChild) {
+          first.removeChild(first.lastChild);
+        }
+
+        var second = document.getElementById("labels2");
+        while (second.firstChild) {
+          second.removeChild(second.lastChild);
+        }
+
+        var third = document.getElementById("labels3");
+        while (third.firstChild) {
+          third.removeChild(third.lastChild);
+        }
+
+        var comments11 = JSON.parse(window.localStorage.getItem("comment11"));
+        var comments22 = JSON.parse(window.localStorage.getItem("comment22"));
+        var comments33 = JSON.parse(window.localStorage.getItem("comment33"));
+
+        console.log(comments11);
+        if (comments11) {
+          comments11.forEach((element) => {
+            var y = document.createElement("LABEL");
+            var x = document.createElement("BR");
+            var p = document.createElement("BR");
+            var z = document.createElement("LABEL");
+
+            var node = document.createTextNode(element.value);
+            var nodeDate = document.createTextNode(element.date);
+            y.style.fontWeight = "bold";
+            y.appendChild(node);
+            z.appendChild(nodeDate);
+
+            document.getElementById("labels1").appendChild(y);
+            document.getElementById("labels1").appendChild(x);
+            document.getElementById("labels1").appendChild(p);
+            document.getElementById("labels1").appendChild(z);
+            document.getElementById("labels1").appendChild(x);
+          });
+        }
+
+        if (comments22) {
+          comments22.forEach((element) => {
+            var y = document.createElement("LABEL");
+            var x = document.createElement("BR");
+            var p = document.createElement("BR");
+            var z = document.createElement("LABEL");
+
+            var node = document.createTextNode(element.value);
+            var nodeDate = document.createTextNode(element.date);
+            y.style.fontWeight = "bold";
+            y.appendChild(node);
+            z.appendChild(nodeDate);
+
+            document.getElementById("labels2").appendChild(y);
+            document.getElementById("labels2").appendChild(x);
+            document.getElementById("labels2").appendChild(p);
+            document.getElementById("labels2").appendChild(z);
+            document.getElementById("labels2").appendChild(x);
+
+            console.log(document.getElementById("labels2"));
+          });
+        }
+
+        if (comments33) {
+          comments33.forEach((element) => {
+            var y = document.createElement("LABEL");
+            var x = document.createElement("BR");
+            var p = document.createElement("BR");
+            var z = document.createElement("LABEL");
+
+            var node = document.createTextNode(element.value);
+            var nodeDate = document.createTextNode(element.date);
+            y.style.fontWeight = "bold";
+            y.appendChild(node);
+            z.appendChild(nodeDate);
+
+            document.getElementById("labels3").appendChild(y);
+            document.getElementById("labels3").appendChild(x);
+            document.getElementById("labels3").appendChild(p);
+            document.getElementById("labels3").appendChild(z);
+            document.getElementById("labels3").appendChild(x);
+
+            console.log(document.getElementById("third"));
+          });
+        }
+
+        counter1.innerHTML = window.localStorage.getItem("like1");
+        counter2.innerHTML = window.localStorage.getItem("like2");
+        counter3.innerHTML = window.localStorage.getItem("like3");
+
+        if (window.localStorage.getItem("like1") > 0) {
+        }
+      }
+
+      function Toggle(event) {
+        if (event.classList.contains("far")) {
+          event.classList.remove("far");
+          event.classList.add("fas");
+        }
+      }
+      function myFunction(x) {
+                  x.style.background = "pink";
+                }
     </script>
-     <hr>
-     
-     <span id="id1"></span>
-     <button id = "101" onclick="addComment(this.id)" type="button"><input type="image" src="comment.jpg" alt="comment"width="30" height="30" id="idd1"></button>
-     <p id="writtenhere1"></p>
-
-    
-
-</body>
-
+  </body>
 </html>
+

@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Анкета за посетители</title>
+        
         <style type ="text/css">
         input{border-style:dashed;}
             img{margin:10px;}
@@ -14,10 +15,20 @@
         font-family: Georgia, 'Times New Roman', Times, serif;
       
             }
+            .btn {
+    margin-left: 25%;
+  }
             </style>
+            <script type="text/javascript" src="anketaC.js"></script>
+            <script>
+                function myFunction(x) {
+                  x.style.background = "pink";
+                }
+                </script>
             </head>
             <body>
 <h4>*Изберете пол:</h4>
+
 
 <form>
     
@@ -30,7 +41,7 @@
 <h4>*Внесете име и презиме:</h4>
 <form method="post"action="prv.html">
 <input type="hidden"name="recipient"
-value="emilijatass@gmail.com">
+value="emilijatass@gmail.com" > 
 <input type="hidden"name="subject"
 value="Feedback form">
 <input type="hidden" name="redirect"
@@ -38,7 +49,7 @@ value="prv.html">
 
 <p>
     <input name="name" type="text" size="30"
-    maxlength="50">
+    maxlength="50" onfocus="myFunction(this)">
 </p>
 
 
@@ -48,7 +59,7 @@ value="prv.html">
 
 <form method="prv.html">
     <input name="name" type="text" size="30"
-    maxlength="50">
+    maxlength="50" onfocus="myFunction(this)">
 </form> 
 
 <p>
@@ -70,9 +81,16 @@ value="prv.html">
   value="Наука"></label>
 
 </p>
-<p><label><strong>*Ваш коментар:</strong><br>
-    <textarea name = "comments" rows = "4" cols = "36" placeholder = "Enter comments here."></textarea>
-    </label></p>
+
+<div id="first" class="container">
+    
+    <textarea name="Comment" id="comm21" cols="100" rows="10" placeholder = "Enter comments here." onfocus="myFunction(this)"></textarea>
+     <button class="btn" onclick="storeComm21()">Post</button>
+     <br /><br />
+     <div id="labels21" class="labelsAll"></div>
+   </div>
+
+
     
     <p><label><strong>*Дали се забавувате?<br>
         Оценете ! </strong></br>
@@ -98,11 +116,3 @@ value="prv.html">
 </body>
 </html>
 
-
-
-
-
-
-
-    </head>
-</html>

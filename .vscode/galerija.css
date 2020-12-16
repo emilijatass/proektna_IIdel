@@ -1,0 +1,43 @@
+.column {
+    float: left;
+    width: 33%;
+}
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+  .like {
+    display: block;
+    margin-top: 30px;
+    margin-left: 25%;
+    margin-right: auto;
+    width: 5%;
+  }
+  .fa-heart {
+    color: red;
+    cursor: pointer;
+    font-size: 15px 15px;
+  }
+  .fa-heart {
+    color: red;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  .input {
+    display: block;
+    margin-top: 30px;
+    margin-left: 25%;
+    margin-right: auto;
+    width: 40%;
+  }
+  .btn {
+    margin-left: 25%;
+  }
+ 
+h5:hover{background-color:rgb(236, 236, 71);
+}
+
+.center{margin-left:80px;}
+.right{margin-left:160px;}

@@ -14,13 +14,8 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
         </style>
-    <script type="text/javascript">
-    function changeText2(){
-   var userInput = document.getElementById('userInput').value;
-document.getElementById('boldStuff2').innerHTML = userInput;
-}
-        </script>
-   
+   <script type="text/javascript" src="blogC.js"></script>
+ 
 </head>
         <body>
 
@@ -59,14 +54,17 @@ document.getElementById('boldStuff2').innerHTML = userInput;
     </p>
 </article>
 </section>
-<p>
-    <p>Вашиот коментар: <b id='boldStuff2'></b> </p> 
-    <textarea name = "comments"  id='userInput' rows = "4" cols = "36" placeholder = 'Внесете коментар..'></textarea>
-  
-    <input type='button' onclick='changeText2()' value='Сподели коментар.'/>
+
+<div id="first" class="container">
     
+    <textarea name="Comment" id="comm9" cols="100" rows="10" placeholder = "Enter comments here." onfocus="myFunction(this)"></textarea>
+     <button class="btn" onclick="storeComm9()">Post</button>
+     <br /><br />
+     <div id="labels9" class="labelsAll"></div>
+   </div>
+
    
-</p>
+
 
             </body>
             
