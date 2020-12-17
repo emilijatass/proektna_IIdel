@@ -14,29 +14,35 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     }
     label{background-color: violet;}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+         function myFunction() {
+        window.open("https://www.facebook.com/emilija.taseva/");
+    }
+    function myFunction1() {
+        window.open("https://www.instagram.com/taseva_emilija/?hl=en");
+    }
+    function myFunction2() {
+        window.open("https://github.com/emilijatass");
+    }
+    </script>
  </head>
  <body>
      
 <h1>Контакт</h1>
 <p> 
-    <a href="https://www.facebook.com/emilija.taseva/">
-        <img src="facebook.png" width="50" height="50" alt="Facebook">  
-        <label> Facebook profile</label><br>
     
-    </a>
-    <a href="mailto:emilijatass@gmail.com"> 
-        <img src="mail.png" width="50" height="50" alt="Email">
-        <label> Email address</label><br>
+        <img src="fb.webp" width="50" height="50" alt="Facebook" onclick="myFunction()">  
        
+    
+    <a href="mailto:emilijatass@gmail.com"> 
+        <img src="email.png" width="50" height="50" alt="Email">
 
     </a>
-    <a href="https://www.instagram.com/taseva_emilija/?hl=en"> 
-        <img src="insta.jpg" width="50" height="50" alt="Instagram">
-        <label> Instagram profile</label><br>
-    </a>
-    <p><label>Телефонски број: +389 77 777 999</label></p>
-        
-    </p>
+    
+        <img src="instagram.png" width="50" height="50" alt="Instagram" onclick="myFunction1()">
+        <img src="git.png" width="50" height="50" alt="GitHub" onclick="myFunction2()">  
+       
     </p>
     </body>
     </html>

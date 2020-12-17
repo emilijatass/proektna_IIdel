@@ -29,6 +29,25 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+    $(document).ready(function(){
+  $("button").click(function(){
+    $("p").css("background-color", "pink");
+  });
+});
+function myFunction() {
+  window.open("https://www.billboard.com/articles/news/awards/8550194/billboard-latin-music-awards-2020-artist-of-the-year-finalists");
+}
+</script>
 </head>
 
 <body>
@@ -39,8 +58,8 @@
             <ul>
                 <li><a href="https://open.spotify.com/playlist/37i9dQZF1DX10zKzsJ2jva?si=gKSSwT4ZRTGCQaOQxGrhqQ">"Viva
                         Latino!"</a></li>
-                <li><a
-                        href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M?si=h9xjICJdThyU6S8GV0bd8w&fbclid=IwAR1njHvEjeds2Eh8OGyU1MnGDLv7QVBGe-iBy7wROEsXhCdn8Yi0GGXkR0Y">Top
+
+                      <li><a href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M?si=h9xjICJdThyU6S8GV0bd8w&fbclid=IwAR1njHvEjeds2Eh8OGyU1MnGDLv7QVBGe-iBy7wROEsXhCdn8Yi0GGXkR0Y">Top
                         Hits</a></li>
                 <li><a
                         href="https://open.spotify.com/playlist/5EMcy4VfQKUnjSaPvWuANr?si=bbzpjGyrSIWXsmJLxx8oJg&fbclid=IwAR3zwEuq-EwLF-rpCpKe8rlwgZ2DiCVZe_m1qWJSFEvuOpeotjsLJb1V2E0">
@@ -53,6 +72,12 @@
         </em>
 
     </nav>
+
+     
+    <p >Meet The Billboard Latin Music Awards 2020 Artist of the Year Finalists:</p>
+    <button id="hide">Hide</button>
+    <button id="show" onclick="myFunction()">Show </button>
+    
 </body>
 
 </html>

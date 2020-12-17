@@ -28,12 +28,23 @@ text-align: right;
  font-family: Arial, Helvetica, sans-serif;
  font:bold;
  }
- .h1{float:left;
+ .h3{float:left;
  text-align:left;
  widows: 50%;}
 
-
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    function myFunction() {
+        window.open("https://www.facebook.com/daveskitchenofficial/");
+    }
+
+    $(document).ready(function(){
+  $("#p1").mouseenter(function(){
+    alert("Yummy!");
+  });
+});
+    </script>
  </head>
  <body>
 
@@ -52,7 +63,7 @@ text-align: right;
 </nav>
 <p class="fl">
    
-        <img class= "h1" src="muffins.jpg" height="250" weight="300" alt="Чоколадни мафини">
+        <img  id="p1" class= "h3" src="muffins.jpg" height="250" weight="300" alt="Чоколадни мафини">
    
 
  <label ><strong>Потребни состојки<br></label>
@@ -96,7 +107,7 @@ text-align: right;
 
                 </p>
                 <p>
-                    <a href="https://www.facebook.com/daveskitchenofficial/"> *Кликни овде за повеќе рецепти!</a>
+                    <p style="color:rebeccapurple" onclick="myFunction()">*Кликни овде за повеќе рецепти!
                 </p>
                 
                 </body>
